@@ -17,6 +17,13 @@ is_always_run: false
 is_skippable: false
 run_if: ""
 inputs:
+- versioner_major_number:
+    opts:
+      title: "Major version number"
+      summary: The version number to use when versioning artifacts.
+      is_expand: true
+      is_required: false
+      value_options: []
   - versioner_build_number:
     opts:
       title: "Build number"
