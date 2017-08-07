@@ -24,6 +24,7 @@ if ! [[ ${versioner_major_number} =~ ^[0-9]+$ ]] ; then
 fi
 
 echo "Updating versions..."
+echo "  version:    ${versioner_major_number}"
 echo "  build:    ${versioner_build_number}"
 echo "  revision: ${versioner_revision_number}"
 
