@@ -15,11 +15,19 @@ if ! [[ ${versioner_revision_number} =~ ^[0-9]+$ ]] ; then
    echo "ERROR: versioner_revision_number parameter must be an integer.  Leave blank to use zero." >&2; exit 1
 fi
 
+if [ -z "${versioner_major_number}" ] ; then
+  versioner_major_number="1"
+fi
+
+if ! [[ ${versioner_major_number} =~ ^[0-9]+$ ]] ; then
+   echo "ERROR: versioner_major_number parameter must be an integer.  Leave blank to default to 1." >&2; exit 1
+fi
+
 echo "Updating versions..."
 echo "  build:    ${versioner_build_number}"
 echo "  revision: ${versioner_revision_number}"
 
-find . -name AssemblyInfo.cs -type f -exec sed -i '.bak'  "s/AssemblyVersion(\"[0-9\.\*]*/AssemblyVersion(\"1.0.${versioner_build_number}.${versioner_revision_number}/" {} +
-find . -name '*.nuspec' -type f -exec sed -i '.bak'  "s/version\>[0-9\.]*/version>1.0.${versioner_build_number}/" {} +
+find . -name AssemblyInfo.cs -type f -exec sed -i '.bak'  "s/AssemblyVersion(\"[0-9\.\*]*/AssemblyVersion(\"${versioner_major_number}.0.${versioner_build_number}.${versioner_revision_number}/" {} +
+find . -name '*.nuspec' -type f -exec sed -i '.bak'  "s/version\>[0-9\.]*/version>${versioner_major_number}.0.${versioner_build_number}/" {} +
 
 exit 0
