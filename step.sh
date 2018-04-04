@@ -19,7 +19,7 @@ if [ -z "${versioner_major_number}" ] ; then
   versioner_major_number="1"
 fi
 
-if [ -z "${versioner_major_number}" ] ; then
+if [ -z "${versioner_minor_number}" ] ; then
   versioner_minor_number="0"
 fi
 
