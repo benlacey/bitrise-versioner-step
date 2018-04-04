@@ -34,7 +34,7 @@ echo "  build:    ${versioner_build_number}"
 echo "  revision: ${versioner_revision_number}"
 
 find . -name AssemblyInfo.cs -type f -exec sed -i '.bak'  "s/AssemblyVersion(\"[0-9\.\*]*/AssemblyVersion(\"${versioner_major_number}.${versioner_minor_number}.${versioner_build_number}.${versioner_revision_number}/" {} +
-find . -name '*.nuspec' -type f -exec sed -i '.bak'  "s/version\>[0-9\.]*/version>${versioner_major_number}.${versioner_minor_number}.${versioner_build_number}/" {} +\
+find . -name '*.nuspec' -type f -exec sed -i '.bak'  "s/version\>[0-9\.]*/version>${versioner_major_number}.${versioner_minor_number}.${versioner_build_number}/" {} +
 find . -name '*.csproj' -type f -exec sed -i '.bak'  "s/PackageVersion\>[0-9\.]*/PackageVersion>${versioner_major_number}.${versioner_minor_number}.${versioner_build_number}/" {} +
 
 exit 0
