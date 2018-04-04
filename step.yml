@@ -27,12 +27,11 @@ inputs:
       is_required: false
       value_options: []
   - versioner_minor_number:
-      opts:
-        title: Minor version number
-        summary: The minor version number.
-        is_expand: true
-        is_required: false
-        value_options: []
+    opts:
+      title: Minor version number
+      is_expand: true
+      is_required: false
+      value_options: []
   - versioner_build_number:
     opts:
       title: Build number
