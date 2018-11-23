@@ -1,9 +1,11 @@
-title: C# Artifact versioning step
+title: 'C# Artifact versioning step'
 summary: Updates the version numbers of generated artifacts.
-description: Changes the AssemblyVersion attributes of libraries, and NuGet package version numbers if nuspec files are found.
-website: https://github.com/benlacey/bitrise-versioner-step
-source_code_url: https://github.com/benlacey/bitrise-versioner-step
-support_url: https://github.com/benlacey/bitrise-versioner-step/issues
+description: >-
+  Changes the AssemblyVersion attributes of libraries, and NuGet package version
+  numbers if nuspec files are found.
+website: 'https://github.com/blacknothing/bitrise-versioner-step'
+source_code_url: 'https://github.com/blacknothing/bitrise-versioner-step'
+support_url: 'https://github.com/blacknothing/bitrise-versioner-step/issues'
 host_os_tags:
   - osx-10.10
 project_type_tags:
@@ -15,19 +17,32 @@ type_tags:
 is_requires_admin_user: true
 is_always_run: false
 is_skippable: false
-run_if: ""
+run_if: ''
 inputs:
+  - versioner_major_number:
+    opts:
+      title: Major version number
+      summary: The major version number.
+      is_expand: true
+      is_required: false
+      value_options: []
+  - versioner_minor_number:
+    opts:
+      title: Minor version number
+      is_expand: true
+      is_required: false
+      value_options: []
   - versioner_build_number:
     opts:
-      title: "Build number"
-      summary: The build number to use when versioning artifacts.
+      title: Build number
+      summary: The build number.
       is_expand: true
       is_required: true
       value_options: []
   - versioner_revision_number:
     opts:
-      title: "Revision number"
-      summary: The revision number to use when versioning artifacts.  Leave blank to use zero.
+      title: Revision number
+      summary: The revision number.  Leave blank to use zero.
       is_expand: true
       is_required: false
       value_options: []
