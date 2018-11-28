@@ -37,6 +37,6 @@ find . -name AssemblyInfo.cs -type f -exec sed -i '.bak'  "s/AssemblyVersion(\"[
 find . -name '*.nuspec' -type f -exec sed -i '.bak'  "s/version\>[0-9\.]*/version>${versioner_major_number}.${versioner_minor_number}.${versioner_build_number}/" {} +
 find . -name '*.nuproj' -type f -exec sed -i '.bak'  "s/PackageVersion\>[0-9\.]*/PackageVersion>${versioner_major_number}.${versioner_minor_number}.${versioner_build_number}/" {} +
 find . -name '*.csproj' -type f -exec sed -i '.bak'  "s/PackageVersion\>[0-9\.]*/PackageVersion>${versioner_major_number}.${versioner_minor_number}.${versioner_build_number}/" {} +
-find . -name *.props -type f -exec sed -i '.bak'  "s/Version\>[0-9\.]*/Version>${versioner_major_number}.${versioner_minor_number}.${versioner_build_number}/" {} +
+find . -name Directory.Build.props -type f -exec sed -i '.bak'  "s/Version\>[0-9\.]*/Version>${versioner_major_number}.${versioner_minor_number}.${versioner_build_number}/" {} +
 
 exit 0
